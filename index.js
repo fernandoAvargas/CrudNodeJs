@@ -27,6 +27,8 @@ server.get('/cursos', (req, res) => {
 server.post('/cursos', (req, res) => {
     const { name } = req.body;
     cursos.push(name);
+
+    return res.json(cursos);
 });
 
 // Atualizar um curso
@@ -37,7 +39,6 @@ server.put('/cursos/:index', (req,res) => {
 
   cursos[index] = name;
   return res.json(cursos);
-
 });
 
 // Excluir um curso
